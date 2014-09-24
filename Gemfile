@@ -15,6 +15,7 @@ gem 'autoprefixer-rails'
 gem 'simple_form'
 gem 'annotate'
 gem 'friendly_id'
+gem 'devise'
 group :development, :test do
   gem 'sqlite3'
 end
