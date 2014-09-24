@@ -8,7 +8,22 @@
 </head>
 <body>
 
-<%= yield %>
+<header class="site-header" role="banner">
+  <%= render 'layouts/navbar' %>
+</header>
+<div class="main-container">
+<div class="row-fluid">
+	<div class="col-md-2"></div>
+	<div class="col-md-8"> 
+		<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+	<%= yield %>
+	</div>
+	<div class="col-md-2"></div>
+</div>
+    
+</div>
+
 
 </body>
 </html>
