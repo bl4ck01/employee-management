@@ -22,4 +22,5 @@
 class Employee < ActiveRecord::Base
   belongs_to :user
   validates :name,:emp_id,:location,:date_of_joining,:date_of_birth,:address,:skills, presence: true
+  validates :emp_id uniqueness: true
 end
