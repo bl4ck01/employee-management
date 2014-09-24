@@ -1,6 +1,5 @@
 <%= simple_form_for(@employee) do |f| %>
   <%= f.error_notification %>
-
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :emp_id %>
@@ -13,7 +12,7 @@
                               end_year: Date.today.year , 
                               order: [:day ,:month, :year] %>    <%= f.input :address %>
     <%= f.input :skills %>
-   
+    <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
   <br/>
   <div class="form-actions">

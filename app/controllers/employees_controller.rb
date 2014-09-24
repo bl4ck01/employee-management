@@ -1,6 +1,8 @@
 class EmployeesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
+   before_action :authorize, only: [ :edit, :destroy]
+  
 
   # GET /employees
   # GET /employees.json
@@ -67,7 +69,13 @@ class EmployeesController < ApplicationController
     def set_employee
       @employee = Employee.find(params[:id])
     end
-
+    def authorize
+      @employee = Employee.find(params[:id])
+      if current_user.id == @employee.user_id
+      else
+       redirect_to employees_url, alert: 'Sorry You are not an authorized person to do this action ' 
+     end
+   end
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
       params.require(:employee).permit(:name, :emp_id, :location, :date_of_joining, :date_of_birth, :address, :skills, :user_id)
