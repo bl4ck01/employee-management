@@ -1,0 +1,18 @@
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Edit <%= @employee.name %> Details</h3>
+  </div>
+  <div class="panel-body">
+
+
+
+<%= render 'form' %>
+
+
+  </div>
+</div>
+<%= link_to 'Show', @employee,class: "btn btn-primary btn-sm"  %> 
+<%= link_to 'Destroy', @employee, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger btn-sm" %> 
+<%= link_to 'Back', employees_path ,class: "btn btn-info btn-sm"%>
+

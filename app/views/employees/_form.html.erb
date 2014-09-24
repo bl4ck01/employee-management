@@ -1,0 +1,23 @@
+<%= simple_form_for(@employee) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :emp_id %>
+    <%= f.input :location %>  
+     <%= f.input :date_of_joining, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year , 
+                              order: [:day ,:month, :year] %>
+   
+     <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year , 
+                              order: [:day ,:month, :year] %>    <%= f.input :address %>
+    <%= f.input :skills %>
+   
+  </div>
+  <br/>
+  <div class="form-actions">
+    <%= f.button :submit ,class: "btn btn-success btn-sm" %>
+  </div>
+<% end %>
+<br/>
